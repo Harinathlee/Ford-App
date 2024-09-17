@@ -4,10 +4,10 @@ import Login from "./features/user/Login";
 
 function App() {
   return (
-    <>
-      <h1>This is Login page</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="text-2xl font-bold my-4">This is Login page</h1>
       <Login />
-    </>
+    </div>
   );
 }
 
