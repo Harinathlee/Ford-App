@@ -46,7 +46,7 @@ function Login() {
   }
 
   return (
-    <div>
+    <div role="login">
       {userDetailFetchSuccess && `userDetails ${data.id}`}
       Login Status {loginStatus ? "Yes" : "No"}
       <button onClick={handleLogin}>Login</button>
