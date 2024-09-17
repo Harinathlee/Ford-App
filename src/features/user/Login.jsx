@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout } from "./slice";
 import { useGetUserDetailsQuery, useTransactMutation } from "./api";
+import "./userStyles.scss";
+
 function Login() {
   const dispatch = useDispatch();
   const loginStatus =
@@ -42,16 +44,36 @@ function Login() {
   }
 
   if (userDetailFetchFailed) {
-    console.log(isError);
+    console.log(userDetailFetchFailed);
   }
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center mt-4">
       {userDetailFetchSuccess && `userDetails ${data.id}`}
-      Login Status {loginStatus ? "Yes" : "No"}
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
-      <button onClick={handleTransaction}>Post Transaction</button>
+      <p>
+        <span className="font-bold">Login Status:</span>{" "}
+        {loginStatus ? "Yes" : "No"}
+      </p>
+      <div className="mt-2">
+        <button
+          className="btn bg-blue-500 hover:bg-blue-600"
+          onClick={handleLogin}
+        >
+          Login
+        </button>
+        <button
+          className="btn bg-red-500 hover:bg-red-600"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+        <button
+          className="btn bg-green-500 hover:bg-green-600"
+          onClick={handleTransaction}
+        >
+          Post Transaction
+        </button>
+      </div>
     </div>
   );
 }
