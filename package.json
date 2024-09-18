@@ -11,7 +11,9 @@
     "preview": "vite preview",
     "audit": "npm audit --json | npm-audit-html --output audit/report.html",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "stagebuild":"npm run build -- --mode staging",
+    "prodbuild":"npm run build -- --mode production"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
