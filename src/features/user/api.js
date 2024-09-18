@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // define the basepath
-export const baseUrl = "http://localhost:8080/api/";
+export const baseUrl = import.meta.env.VITE_API_BASE_URL;
 // Define the API slice
 const userApi = createApi({
   reducerPath: "userApi",
