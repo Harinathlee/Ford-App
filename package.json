@@ -12,8 +12,8 @@
     "audit": "npm audit --json | npm-audit-html --output audit/report.html",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "stagebuild":"npm run build -- --mode staging",
-    "prodbuild":"npm run build -- --mode production"
+    "stagebuild": "npm run build -- --mode staging",
+    "prodbuild": "npm run build -- --mode production"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
@@ -43,6 +43,7 @@
     "npm-audit-html": "^1.5.0",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
+    "sass-embedded": "^1.79.1",
     "tailwindcss": "^3.4.11",
     "vite": "^5.4.1",
     "vitest": "^2.1.1"
