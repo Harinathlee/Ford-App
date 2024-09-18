@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "audit": "npm audit --json | npm-audit-html --output audit/report.html",
     "test": "vitest",
+    "coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "stagebuild": "npm run build -- --mode staging",
     "prodbuild": "npm run build -- --mode production"
@@ -31,6 +32,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^2.1.1",
     "@vitest/ui": "^2.1.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.10.0",
