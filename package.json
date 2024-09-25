@@ -14,7 +14,8 @@
     "coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "stagebuild": "npm run build -- --mode staging",
-    "prodbuild": "npm run build -- --mode production"
+    "prodbuild": "npm run build -- --mode production",
+    "dockerize":"docker build -t ford-poc-react ."
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
