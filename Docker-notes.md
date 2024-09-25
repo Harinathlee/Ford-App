@@ -3,7 +3,7 @@
 2. Then run => npm run dockerize [This will dockerize the dist folder along with server]
 3. In the terminal run --> docker images  [to see you image that was built]
 4. To run the image in the docker 
-    docker run -p 8080:80 ford-poc-react
+    docker run -p 8080:80 ford-poc-react-stg   // use -stg for staging and -prd for prod
     You should see your your application running at localhost:8080
 5. To stop the image from running
     a. First identify the containers that are running
