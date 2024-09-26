@@ -17,7 +17,7 @@
 Go to gcr.io and enable the Google Artifact registry.
 1. Tag the image that will be pushed.
     docker tag your-image-name gcr.io/gcp-project-id/your-image-name
-    E.g. docker tag ford-poc-react gcr.io/cicd-435406/ford-poc-react
+    E.g. docker tag ford-poc-react gcr.io/poc-cicd-436810/ford-poc-react
 2. Authenticate the docker
     gcloud auth configure-docker
 
@@ -32,7 +32,7 @@ Go to gcr.io and enable the Google Artifact registry.
 3. Push the image to the GCR
     docker push gcr.io/gcp-project-id/your-image-name
 
-    E.g. docker push gcr.io/cicd-435406/ford-poc-react
+    E.g. docker push gcr.io/poc-cicd-436810/ford-poc-react
 
 
 4. Deploy to the cloudrun
@@ -41,9 +41,10 @@ Go to gcr.io and enable the Google Artifact registry.
   --platform managed \
   --region your-region \
   --allow-unauthenticated
+  --set-env-vars PORT=80
 
   E.g.
-  gcloud run deploy cr-ford-poc --image gcr.io/cicd-435406/ford-poc-react --platform managed --region us-central1 --allow-unauthenticated
+  gcloud run deploy cr-ford-poc --image gcr.io/cicd-435406/ford-poc-react --platform managed --region us-central1 --allow-unauthenticated --set-env-vars PORT=80
 
   Once you hit the above command you will get =>
   The following APIs are not enabled on project [cicd-435406]:
@@ -53,6 +54,7 @@ Go to gcr.io and enable the Google Artifact registry.
   TODO : Reached here but got an error =>ERROR: (gcloud.run.deploy) Revision 'cr-ford-poc-00001-vx4' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.
   
   Once deployed, you will receive a URL to access your static application running on Cloud Run.
-
-
+  [solution => the problem was that cloud run expects the exposed port to be 8080 but we exposed 80, hence reconfigure the cloudrun visually by selecting a right port]
+  Look ate the below image
+![alt text](image.png)
 
