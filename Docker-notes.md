@@ -17,7 +17,7 @@
 Go to gcr.io and enable the Google Artifact registry.
 1. Tag the image that will be pushed.
     docker tag your-image-name gcr.io/gcp-project-id/your-image-name
-    E.g. docker tag ford-poc-react gcr.io/poc-cicd-436810/ford-poc-react
+    E.g. docker tag ford-poc-react-stg gcr.io/poc-cicd-436810/ford-poc-react-stg
 2. Authenticate the docker
     gcloud auth configure-docker
 
@@ -32,7 +32,7 @@ Go to gcr.io and enable the Google Artifact registry.
 3. Push the image to the GCR
     docker push gcr.io/gcp-project-id/your-image-name
 
-    E.g. docker push gcr.io/poc-cicd-436810/ford-poc-react
+    E.g. docker push gcr.io/poc-cicd-436810/ford-poc-react-stg
 
 
 4. Deploy to the cloudrun
